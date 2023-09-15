@@ -1,0 +1,18 @@
+/* Ocultar a logo streamlit no footer(rodapé) do App */
+footer {
+    visibility: hidden;
+}
+
+/* Ocultar o menu streamlit no cabeçalho do App */
+#MainMenu {
+    visibility: hidden;
+}
+
+/* Centralizar o título da div Login */
+.stMarkdown{
+    text-align: center;
+}
+
+.stImage{
+    align-items: center;
+}
