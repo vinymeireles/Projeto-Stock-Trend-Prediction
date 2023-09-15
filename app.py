@@ -6,6 +6,8 @@ import yfinance as yf
 import datetime
 from keras.models import load_model
 import streamlit as st
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
 #Estilizar o app com css (abrir o arquivo .css)
