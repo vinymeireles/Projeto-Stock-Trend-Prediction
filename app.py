@@ -66,8 +66,6 @@ with tab3:
 data_training = pd.DataFrame(df['Close'][0:int(len(df)*0.70)])
 data_testing = pd.DataFrame(df['Close'][int(len(df)*0.70): int(len(df))])
 
-st.write(data_training)
-st.write(data_testing)
 
 from sklearn.preprocessing import MinMaxScaler
 scaler = MinMaxScaler(feature_range=(0,1))
