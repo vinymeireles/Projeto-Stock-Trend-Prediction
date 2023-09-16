@@ -85,7 +85,7 @@ x_train, y_train = np.array(x_train), np.array(y_train)
 model = load_model('keras_model.h5')
 
 #Testing Part
-past_100_days = data_training.tail(100)
+past_100_days = data_training.tail()
 final_df = past_100_days.append(data_testing, ignore_index=True)
 input_data = scaler.fit_transform(final_df)
 
