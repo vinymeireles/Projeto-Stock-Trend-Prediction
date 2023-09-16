@@ -69,7 +69,7 @@ data_testing = pd.DataFrame(df['Close'][int(len(df)*0.70): int(len(df))])
 from sklearn.preprocessing import MinMaxScaler
 scaler = MinMaxScaler(feature_range=(0,1))
 
-data_training = scaler.fit_transform(data_training)
+data_training_array = scaler.fit_transform(data_training)
 
 #Load my model ML
 model = load_model('keras_model.h5')
@@ -102,8 +102,8 @@ with tab4:
     fig2 = plt.figure(figsize=(12,6))
     plt.plot(y_test, 'b', label = 'Original Price')
     plt.plot(y_predicted, 'r', label = 'Predicted Price')
-    plt.xlabel = ('Time')
-    plt.ylabel = ('Price')
+    plt.xlabel('Time')
+    plt.ylabel('Price')
     plt.legend()
     st.pyplot(fig2)         
 
