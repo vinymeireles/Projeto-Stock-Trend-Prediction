@@ -7,7 +7,7 @@ import datetime
 from keras.models import load_model
 import streamlit as st
 import warnings
-warnings.simplefilter(action='ignore', category=FutureWarning)
+warnings.filterwarnings("ignore")
 
 
 #Estilizar o app com css (abrir o arquivo .css)
@@ -77,7 +77,7 @@ model = load_model('keras_model.h5')
 
 #Testing Part
 past_100_days = data_training.tail(100)
-final_df = past_100_days.concat(data_testing, ignore_index=False)
+final_df = past_100_days.append(data_testing, ignore_index=False)
 input_data = scaler.fit_transform(final_df)
 
 x_test = []
