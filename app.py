@@ -76,7 +76,7 @@ data_training_array = scaler.fit_transform(data_training)
 x_train = []
 y_train = []
 
-for i in range(100,data_training_array.shape[0]):
+for i in range(100, data_training_array.shape[0]):
     x_train.append(data_training_array[i-100: i])
     y_train.append(data_training_array[i, 0])
 
