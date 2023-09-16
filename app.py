@@ -7,8 +7,7 @@ import datetime
 from keras.models import load_model
 import streamlit as st
 import warnings
-warnings.simplefilter(action='ignore', category=FutureWarning)
-
+warnings.filterwarnings("ignore")
 
 #Estilizar o app com css (abrir o arquivo .css)
 with open("style.css") as f:
@@ -71,6 +70,16 @@ scaler = MinMaxScaler(feature_range=(0,1))
 
 data_training_array = scaler.fit_transform(data_training)
 
+#Spliting data into x_train and y_train
+
+x_train = []
+y_train = []
+
+for i in range(100, data_training_array.shape[0]):
+    x_train.append(data_training_array[i-100: i])
+    y_train.append(data_training_array[i, 0])
+
+x_train, y_train = np.array(x_train), np.array(y_train)
 
 #Load my model ML
 model = load_model('keras_model.h5')
